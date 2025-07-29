@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ 'Edit Post' if 'edit' in request.path else 'New Post' }}</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.title.label }} {{ form.title(class="form-control") }}<br>
+  {{ form.content.label }} {{ form.content(class="form-control", rows=6) }}<br>
+  {{ form.submit(class="btn btn-success") }}
+</form>
+{% endblock %}
